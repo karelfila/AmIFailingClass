@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Am I failing class?</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="Main.js"></script>
+</head>
+<body>
+<div class="h11">
+    <h1>Am I failing class?</h1>
+</div>
+<script>
+    // appendChild = přidej potomka body
+    var button = document.createElement('button'); //byl vytvořen button
+    button.innerHTML = "Add Grade";
+
+    document.body.appendChild(button); //zobrazení buttonu
+
+    button.addEventListener("click", function () { //rozhýbe tlačítko
+        var div = document.createElement('div');
+        document.body.appendChild(div);
+        var lbl = document.createElement('span');
+        lbl.innerHTML = "Grade:";
+        document.body.appendChild(lbl);
+        var input = document.createElement('input');
+        document.body.appendChild(input);
+        var lbl2 = document.createElement('span');
+        lbl2.innerHTML = "Weight:";
+        document.body.appendChild(lbl2);
+        var input2 = document.createElement('input');
+        document.body.appendChild(input2);
+    });
+    var button2 = document.createElement('button');
+    button2.innerHTML = "Calculate Average";
+
+    document.body.appendChild(button2);
+
+    button2.addEventListener("click", function () {
+
+        var grades = 0;
+        var weights = 0;
+        var inputs = document.getElementsByTagName('input');
+        for (let i = 0; i < inputs.length; i = i + 2) {  //for pro počítání
+            grades = grades + parseInt(inputs[i].value) * parseInt(inputs[i + 1].value);
+            weights = weights + parseInt(inputs[i + 1].value);
+        }
+        var result = grades / weights;
+        var div = document.createElement('div'); //Kontrola jestli projdete nebo ne
+        div.innerHTML = result.toString() + '%';
+        document.body.appendChild(div);
+        var div2 = document.createElement('div');
+        if (result < 50) {
+            div2.innerHTML = "Yes, you are failing class."
+        } else {
+            div2.innerHTML = "No, you are not failing class."
+        }
+        document.body.appendChild(div2);
+    });
+
+    var div = document.createElement('div');
+    document.body.appendChild(div);
+    var p = document.createElement('p');
+    var lbl = document.createElement('span');
+    lbl.innerHTML = "Grade:";
+    document.body.appendChild(lbl);
+    var input = document.createElement('input');
+    document.body.appendChild(input);
+    var lbl2 = document.createElement('span');
+    lbl2.innerHTML = "Weight:";
+    document.body.appendChild(lbl2);
+    var input2 = document.createElement('input');
+    document.body.appendChild(input2);
+
+
+</script>
+
+</body>
+</html>

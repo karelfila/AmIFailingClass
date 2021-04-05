@@ -1,0 +1,27 @@
+body {
+    font-family: Arial;
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: #EEE2DC;
+}
+
+.h11 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+button {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+input {
+    margin: 5px;
+    outline: none;
+    border-style: solid;
+    border-color: black;
+    border-width: 0.2px;
+}
+div{
+    margin-top: 5px;
+}
